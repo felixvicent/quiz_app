@@ -1,16 +1,21 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const QuestionApp());
+  runApp(QuestionApp());
 }
 
 class QuestionApp extends StatelessWidget {
-  const QuestionApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Text('Hello Felps'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Hello Felps'),
+        ),
+        body: Text('Hello Felps'),
+      ),
     );
   }
 }
