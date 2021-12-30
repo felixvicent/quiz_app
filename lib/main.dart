@@ -69,7 +69,7 @@ class _QuestionAppState extends State<QuestionApp> {
                 selectedQuestion: _selectedQuestion,
                 toRespond: _toRespond,
               )
-            : Result(),
+            : Result(_points),
       ),
     );
   }
