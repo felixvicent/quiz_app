@@ -19,9 +19,19 @@ class _QuestionAppState extends State<QuestionApp> {
 
   @override
   Widget build(BuildContext context) {
-    final questions = [
-      'Qual o 5º elemento da sequancia Fibonacci?',
-      'Qual a velocidade da luz',
+    final List<Map<String, Object>> questions = [
+      {
+        'question': 'Qual é o 5º elemento da sequência Fibonacci?',
+        'answer': ['5', '3', '8', '13'],
+      },
+      {
+        'question': 'Qual a velocidade da luz?',
+        'answer': ['200.000 m/s', '50.000 m/s', '300.000 m/s', '120.000 m/s'],
+      },
+      {
+        'question': 'Quantos segundos tem um hora?',
+        'answer': ['3.600', '3.200', '2.800', '4.000'],
+      }
     ];
 
     return MaterialApp(
@@ -32,7 +42,7 @@ class _QuestionAppState extends State<QuestionApp> {
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Question(questions[_selectedAnswer]),
+            Question(questions[_selectedAnswer]['question'] as String),
             Answer('5', _toRespond),
             Answer('3', _toRespond),
             Answer('8', _toRespond),
