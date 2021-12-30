@@ -21,14 +21,16 @@ class Quiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String>? answers = hasSelectedQuestion
-        ? questions[selectedQuestion]['answer'] as List<String>
+    List<Map<String, Object>>? answers = hasSelectedQuestion
+        ? questions[selectedQuestion]['answer'] as List<Map<String, Object>>
         : null;
 
     return Column(
       children: [
         Question(questions[selectedQuestion]['question'] as String),
-        ...answers!.map((text) => Answer(text, toRespond)).toList(),
+        ...answers!
+            .map((answer) => Answer(answer['text'] as String, toRespond))
+            .toList(),
       ],
     );
   }
