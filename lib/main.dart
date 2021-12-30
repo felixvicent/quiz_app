@@ -6,11 +6,13 @@ void main() {
   runApp(QuestionApp());
 }
 
-class QuestionApp extends StatelessWidget {
+class QuestionAppState extends State<QuestionApp> {
   var selectedAnswer = 0;
 
   void toRespond() {
-    selectedAnswer++;
+    setState(() {
+      selectedAnswer++;
+    });
   }
 
   @override
@@ -45,5 +47,12 @@ class QuestionApp extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class QuestionApp extends StatefulWidget {
+  @override
+  QuestionAppState createState() {
+    return QuestionAppState();
   }
 }
