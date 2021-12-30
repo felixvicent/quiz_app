@@ -7,6 +7,10 @@ void main() {
 }
 
 class QuestionApp extends StatelessWidget {
+  void toRespond() {
+    print('Pergunta respondida');
+  }
+
   @override
   Widget build(BuildContext context) {
     final questions = [
@@ -20,20 +24,20 @@ class QuestionApp extends StatelessWidget {
           title: Text('Hello Felps'),
         ),
         body: Column(
-          // ignore: prefer_const_literals_to_create_immutables, deprecated_member_use
+          // ignore: prefer_const_literals_to_create_immutables
           children: [
             Text(questions[0]),
             RaisedButton(
               child: Text('5'),
-              onPressed: null,
+              onPressed: toRespond(),
             ),
             RaisedButton(
               child: Text('8'),
-              onPressed: null,
+              onPressed: toRespond(),
             ),
             RaisedButton(
               child: Text('3'),
-              onPressed: null,
+              onPressed: toRespond(),
             ),
           ],
         ),
