@@ -33,7 +33,9 @@ class _QuestionAppState extends State<QuestionApp> {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             Question(questions[_selectedAnswer]),
-            Answer('5', _toRespond)
+            Answer('5', _toRespond),
+            Answer('3', _toRespond),
+            Answer('8', _toRespond),
           ],
         ),
       ),
