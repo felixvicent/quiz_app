@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:quiz_app/answer.dart';
-import 'package:quiz_app/question.dart';
 import 'package:quiz_app/quiz.dart';
 import 'package:quiz_app/result.dart';
 
@@ -13,6 +11,7 @@ void main() {
 
 class _QuestionAppState extends State<QuestionApp> {
   var _selectedQuestion = 0;
+  var _points = 0;
 
   final _questions = const [
     {
@@ -44,10 +43,11 @@ class _QuestionAppState extends State<QuestionApp> {
     }
   ];
 
-  void _toRespond() {
+  void _toRespond(int points) {
     if (hasSelectedQuestion) {
       setState(() {
         _selectedQuestion++;
+        _points += points;
       });
     }
   }
