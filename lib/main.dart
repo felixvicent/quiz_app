@@ -6,12 +6,12 @@ void main() {
   runApp(QuestionApp());
 }
 
-class QuestionAppState extends State<QuestionApp> {
-  var selectedAnswer = 0;
+class _QuestionAppState extends State<QuestionApp> {
+  var _selectedAnswer = 0;
 
-  void toRespond() {
+  void _toRespond() {
     setState(() {
-      selectedAnswer++;
+      _selectedAnswer++;
     });
   }
 
@@ -30,18 +30,18 @@ class QuestionAppState extends State<QuestionApp> {
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Text(questions[selectedAnswer]),
+            Text(questions[_selectedAnswer]),
             RaisedButton(
               child: Text('5'),
-              onPressed: toRespond,
+              onPressed: _toRespond,
             ),
             RaisedButton(
               child: Text('8'),
-              onPressed: toRespond,
+              onPressed: _toRespond,
             ),
             RaisedButton(
               child: Text('3'),
-              onPressed: toRespond,
+              onPressed: _toRespond,
             ),
           ],
         ),
@@ -52,7 +52,7 @@ class QuestionAppState extends State<QuestionApp> {
 
 class QuestionApp extends StatefulWidget {
   @override
-  QuestionAppState createState() {
-    return QuestionAppState();
+  _QuestionAppState createState() {
+    return _QuestionAppState();
   }
 }
