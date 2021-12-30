@@ -34,6 +34,11 @@ class _QuestionAppState extends State<QuestionApp> {
       }
     ];
 
+    List<Widget> answers = [];
+    for (var answer in questions[_selectedAnswer]['answer'] as Iterable) {
+      answers.add(Answer(answer, _toRespond));
+    }
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -43,9 +48,7 @@ class _QuestionAppState extends State<QuestionApp> {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             Question(questions[_selectedAnswer]['question'] as String),
-            Answer('5', _toRespond),
-            Answer('3', _toRespond),
-            Answer('8', _toRespond),
+            ...answers
           ],
         ),
       ),
