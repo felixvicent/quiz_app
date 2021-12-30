@@ -52,6 +52,13 @@ class _QuestionAppState extends State<QuestionApp> {
     }
   }
 
+  void _restart() {
+    setState(() {
+      _selectedQuestion = 0;
+      _points = 0;
+    });
+  }
+
   bool get hasSelectedQuestion {
     return _selectedQuestion < _questions.length;
   }
@@ -69,7 +76,7 @@ class _QuestionAppState extends State<QuestionApp> {
                 selectedQuestion: _selectedQuestion,
                 toRespond: _toRespond,
               )
-            : Result(_points),
+            : Result(_points, _restart),
       ),
     );
   }
