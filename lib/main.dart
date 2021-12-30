@@ -21,7 +21,7 @@ class QuestionApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Hello Felps'),
+          title: Text('Perguntas'),
         ),
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
@@ -29,15 +29,15 @@ class QuestionApp extends StatelessWidget {
             Text(questions[0]),
             RaisedButton(
               child: Text('5'),
-              onPressed: toRespond(),
+              onPressed: toRespond,
             ),
             RaisedButton(
               child: Text('8'),
-              onPressed: toRespond(),
+              onPressed: toRespond,
             ),
             RaisedButton(
               child: Text('3'),
-              onPressed: toRespond(),
+              onPressed: toRespond,
             ),
           ],
         ),
