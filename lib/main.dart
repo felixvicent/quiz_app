@@ -1,8 +1,10 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
+
 import 'package:quiz_app/answer.dart';
 import 'package:quiz_app/question.dart';
+import 'package:quiz_app/result.dart';
 
 void main() {
   runApp(QuestionApp());
@@ -56,12 +58,7 @@ class _QuestionAppState extends State<QuestionApp> {
                   ...answers!.map((text) => Answer(text, _toRespond)).toList(),
                 ],
               )
-            : Center(
-                child: Text(
-                  'Parabéns',
-                  style: TextStyle(fontSize: 28),
-                ),
-              ),
+            : Result(),
       ),
     );
   }
