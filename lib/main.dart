@@ -7,8 +7,10 @@ void main() {
 }
 
 class QuestionApp extends StatelessWidget {
+  var selectedAnswer = 0;
+
   void toRespond() {
-    print('Pergunta respondida');
+    selectedAnswer++;
   }
 
   @override
@@ -26,7 +28,7 @@ class QuestionApp extends StatelessWidget {
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Text(questions[0]),
+            Text(questions[selectedAnswer]),
             RaisedButton(
               child: Text('5'),
               onPressed: toRespond,
