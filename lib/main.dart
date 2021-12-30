@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:quiz_app/question.dart';
 
 void main() {
   runApp(QuestionApp());
@@ -30,7 +31,7 @@ class _QuestionAppState extends State<QuestionApp> {
         body: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Text(questions[_selectedAnswer]),
+            Question(questions[_selectedAnswer]),
             RaisedButton(
               child: Text('5'),
               onPressed: _toRespond,
